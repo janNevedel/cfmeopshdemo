@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: True
+  vars:
+    psqlHost: tmpgod8y7mpm8w.cyqqy0awrrdo.eu-central-1.rds.amazonaws.com
+  tasks:
+    - name: Load test data to DB
+      shell: cat /root/mysqlsampledatabase.sql | mysql -uphpuser -pphpuserPHPUSER90 -h {{ psqlHost }}
+
